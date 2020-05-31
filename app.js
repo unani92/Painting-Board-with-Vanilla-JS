@@ -53,9 +53,12 @@ if (canvas) {
 }
 
 // change color
-colors.forEach(color => color.addEventListener('click', event => {
-    ctx.strokeStyle = event.target.style.backgroundColor
-}))
+colors.forEach(color => {
+    color.addEventListener("click", event => {
+        event.target.classList.add("active")
+        ctx.strokeStyle = event.target.style.backgroundColor
+    })
+})
 
 // change linewidth
 input.addEventListener("change",event=>{
